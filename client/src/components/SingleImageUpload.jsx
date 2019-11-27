@@ -26,7 +26,7 @@ class SingleImageUpload extends Component {
   };
 
   onChange = async e => {
-    this.removeFile();
+    // this.removeFile();
     if (!e.target.files[0]) return;
     this.setState({
       filename: e.target.files[0].name,
@@ -51,6 +51,7 @@ class SingleImageUpload extends Component {
     }
     const formData = new FormData();
     formData.append('file', file); // get first file chosen
+    formData.append('public_id', 'huakunshentimetable');
     const setUploadPercentage = this.setUploadPercentage;
     try {
       const res = await axios.post('/upload', formData, {

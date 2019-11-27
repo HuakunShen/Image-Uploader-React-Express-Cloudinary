@@ -19,11 +19,16 @@ app.get('/', (req, res) => {
 
 app.post('/upload', (req, res) => {
   console.log('upload route reached');
-  console.log(req.files);
-  console.log(req.body);
+  const public_id = req.body.public_id;
+  const options = {};
+  if (public_id) {
+    options.public_id = public_id;
+  }
   const values = Object.values(req.files);
-  console.log(values);
-  const promises = values.map(image => cloudinary.uploader.upload(image.path));
+  console.log('public id: ', public_id);
+  const promises = values.map(image =>
+    cloudinary.uploader.upload(image.path, options)
+  );
 
   Promise.all(promises)
     .then(results => res.json(results))
