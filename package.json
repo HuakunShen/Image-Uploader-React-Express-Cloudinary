@@ -1,0 +1,27 @@
+{
+  "name": "image-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuakunShen/Image-Uploader-React-Express-Cloundinary.git"
+  },
+  "author": "Huakun Shen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuakunShen/Image-Uploader-React-Express-Cloundinary/issues"
+  },
+  "homepage": "https://github.com/HuakunShen/Image-Uploader-React-Express-Cloundinary#readme",
+  "dependencies": {
+    "cloudinary": "^1.17.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-form-data": "^2.0.10"
+  }
+}
